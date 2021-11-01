@@ -1,6 +1,5 @@
 package br.com.sicred.votesservice.v1.session.model.response;
 
-import br.com.sicred.votesservice.v1.script.model.response.ScriptResponse;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

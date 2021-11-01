@@ -13,7 +13,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 
-import static br.com.sicred.votesservice.v1.session.service.stub.SessionResponseStub.sessionResponseStub;
+import static br.com.sicred.votesservice.v1.session.service.stub.SessionResponseStub.sessionOpenResponseStub;
 import static br.com.sicred.votesservice.v1.vote.stub.VoteEntityStub.voteEntitiesMoreVotesStub;
 import static br.com.sicred.votesservice.v1.vote.stub.VoteEntityStub.voteEntitiesStub;
 import static br.com.sicred.votesservice.v1.vote.stub.VoteRequestModelStub.voteRequestModelStub;
@@ -70,13 +70,9 @@ class VoteServiceTest {
 
     @Test
     void calculatedResultVotesSumVotes() {
-        when(sessionService.findSession(any())).thenReturn(sessionResponseStub());
+        when(sessionService.findSession(any())).thenReturn(sessionOpenResponseStub());
         when(voteRepository.findAllByIdSession(any())).thenReturn(voteEntitiesMoreVotesStub());
 
         Assertions.assertEquals(2, voteService.calculatedResultVotes("teste").getVotesAgainst());
-    }
-
-    @Test
-    void getAllByIdSession() {
     }
 }
