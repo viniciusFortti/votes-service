@@ -33,12 +33,4 @@ public class ScriptController {
         return scriptFacade.findScript(idScript);
     }
 
-
-    @DeleteMapping("/{idScript}")
-    @ApiOperation(value = "deletar uma pauta por id")
-    @ResponseStatus(HttpStatus.ACCEPTED)
-    public void deleteScript(@PathVariable("idScript") String idScript) {
-        scriptFacade.deleteScript(idScript);
-    }
-
 }

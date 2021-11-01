@@ -31,6 +31,7 @@ public class ScriptService {
     }
 
     public ScriptModel getScript(String idScript) {
+        log.info("[GET SCRIPT] - INICIANDO BUSCA DE SCRIPT, ID: {}", idScript);
         return entityToResponseModel(scriptRepository.findById(idScript)
                 .orElseThrow(() -> logAndThrowScriptNotFound(idScript)));
     }
@@ -50,13 +51,4 @@ public class ScriptService {
         }
     }
 
-    public void deleteScript(String idScript) {
-        try {
-            scriptRepository.deleteById(idScript);
-        } catch (Exception ex) {
-            log.info("[DELETE SCRIPT] - ERRO AO DELETAR SCRIPT, ID: {}", idScript);
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Erro interno ao deletar Pauta," +
-                    " ERRO: " + ex.getClass());
-        }
-    }
 }

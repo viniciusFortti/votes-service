@@ -36,7 +36,7 @@ public class SessionController {
 
     @DeleteMapping("/{idSession}")
     @ApiOperation(value = "deletar uma sessão por id")
-    @ResponseStatus(HttpStatus.ACCEPTED)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteSession(@PathVariable("idSession") String idSession) {
         sessionFacade.deleteSession(idSession);
     }

@@ -22,10 +22,4 @@ public class ScriptFacade {
     public ScriptResponse findScript(String idScript) {
         return scriptModelToResponse(scriptService.getScript(idScript));
     }
-
-    public void deleteScript(String idScript) {
-        scriptService.deleteScript(idScript);
-    }
-
-
 }

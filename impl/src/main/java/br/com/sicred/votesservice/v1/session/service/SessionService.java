@@ -72,6 +72,7 @@ public class SessionService {
 
     public void deleteSession(String idSession) {
         try {
+            log.info("[DELETE SESSAO] - INICIANDO DELEÇÃO DA SESSAO, ID: {}", idSession);
             sessionRepository.deleteById(idSession);
         } catch (Exception ex) {
             log.info("[GET SESSION] - ERRO AO BUSCAR SESSÃO NO BANCO DE DADOS, ERRO {}", ex.getClass());
